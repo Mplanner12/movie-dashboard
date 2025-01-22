@@ -11,10 +11,8 @@ const SearchFilter = ({
 }) => {
   const handleFilter = (event: React.ChangeEvent<HTMLInputElement>) => {
     const query = event.target.value.toLowerCase();
-    const filtered = [...data].filter(
-      (
-        movie // Create a copy
-      ) => movie.title.toLowerCase().includes(query)
+    const filtered = [...data].filter((movie) =>
+      movie.title.toLowerCase().includes(query)
     );
     setFiltered(filtered);
   };
@@ -28,8 +26,6 @@ const SearchFilter = ({
         Search Movies
       </h2>
       <div className="relative">
-        {" "}
-        {/* Container for icon placement */}
         <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
           <MdSearch className="w-5 h-5 text-gray-400 dark:text-gray-500" />
         </div>
